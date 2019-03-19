@@ -1,7 +1,7 @@
 # map_my_world
 This project is part of the Robotics Software Engineering scholar course offered at Udacity. It explores concepts like ROS, SLAM algorithm for mapping and localization problem,  RTAB-Map from ROS, which is an RGB-D, Stereo and Lidar Graph-Based SLAM implementation.
 
-# Project Overview
+## Project Overview
 Map My World! is a project exploring the creation of a 2D occupancy grid and 3D octomap from a simulated environment using a simple robot with the RTAB-Map package.
 RTAB-Map (Real-Time Appearance-Based Mapping) is a popular solution for SLAM to develop robots that can map environments in 3D. 
 For this project, we use the [rtabmap_ros](http://wiki.ros.org/rtabmap_ros)  package, which is a ROS wrapper (API) for interacting with RTAB-Map.
@@ -10,3 +10,22 @@ The project flow is as follows:
 * Make the necessary changes to interface the robot with RTAB-Map.
 * Ensure that all links are properly connected, naming is properly setup and topics are correctly mapped.
 * When the robot is launched, teleop around the room to generate a proper map of the environment.
+
+## Teleop Package
+If you prefer to control your robot to help it explore the map, you would need to add the teleop node. You could use ros-teleop package to send command to the robot using keyboard or controller.
+
+Clone the ros-teleop package to your src folder:
+```
+cd /home/workspace/catkin_ws/src
+git clone https://github.com/ros-teleop/teleop_twist_keyboard
+```
+Build the package and source the setup script:
+```
+cd ..
+catkin_make
+source devel/setup.bash
+```
+Now you could run the teleop script as is described in the README file:
+``
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+```
