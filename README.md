@@ -17,13 +17,19 @@ We have everything ready to go. Launch the ROS nodes and let us start mapping.
 
 First, launch the Gazebo world and RViz, spawn the robot in the environment:
 
- ``` roslaunch my_robot world.launch ```
+ ``` 
+ roslaunch my_robot world.launch 
+ ```
 Then, launch the teleop node:
 
-``` rosrun teleop_twist_keyboard teleop_twist_keyboard.py ```
+``` 
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py 
+```
 Finally, launch your mapping node:
 
-``` roslaunch my_robot mapping.launch ```
+``` 
+roslaunch my_robot mapping.launch 
+```
 Navigate your robot in the simulation to create map for the environment! When you are all set, terminal the node and you could find your map db file in the place you specified in the launch file. If you did not modify the argument, it will be located in the /root/.ros/ folder.
 
 ### Best Practices
@@ -44,9 +50,10 @@ catkin_make
 source devel/setup.bash
 ```
 Now you could run the teleop script as is described in the README file:
-``
+```
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
+
 
 ## Database Analysis
 The rtabmap-databaseViewer is a great tool for exploring the rtab database when it is generated. It is isolated from ROS and allows for complete analysis of the mapping session.
